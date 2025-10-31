@@ -84,3 +84,6 @@ group :test do
   gem "guard"
   gem "guard-minitest"
 end
+
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+
