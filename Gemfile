@@ -4,8 +4,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.1.0"
 
-gem "sprockets-rails" # Required by rails/rails#42512
-gem "sassc-rails"
+# gem "sprockets-rails" # Required by rails/rails#42512
+# gem "sassc-rails"
+
+# rails7以降では上記のgem "sassc-rails"は非推奨であるためgem "dartsass-rails"を追加
+gem "dartsass-rails"
 
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
