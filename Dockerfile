@@ -58,9 +58,8 @@ RUN chmod +x bin/* && \
 # ★★★ 以下を追加 ★★★
 # Install dartsass binary AND precompile assets
 # Both commands require the dummy secret key
-RUN SECRET_KEY_BASE_DUMMY=1 \
-    ./bin/rails dartsass:install && \
-    ./bin/rails assets:precompile
+RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails dartsass:install && \
+    SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 # ★★★ ここまで ★★★
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
