@@ -56,8 +56,11 @@ RUN chmod +x bin/* && \
     sed -i 's/ruby\.exe$/ruby/' bin/*
 
 # ★★★ 以下を追加 ★★★
-# Install dartsass binary explicitly before precompilation
-RUN ./bin/rails dartsass:install
+# Install dartsass binary AND precompile assets
+# Both commands require the dummy secret key
+RUN SECRET_KEY_BASE_DUMMY=1 \
+    ./bin/rails dartsass:install && \
+    ./bin/rails assets:precompile
 # ★★★ ここまで ★★★
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
